@@ -1,0 +1,19 @@
+# Render Static Site: free, never spins down. dist/404.html is served automatically for unknown URLs.
+services:
+  - type: web
+    name: sanbiome
+    runtime: static
+    buildCommand: node build.mjs
+    staticPublishPath: dist
+    headers:
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=3600
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: SITE_URL # the live URL, e.g. https://sanbiome.onrender.com or your custom domain
+        sync: false
+        sync: false
+      - key: ANALYTICS_DOMAIN # optional Plausible domain
+        sync: false
