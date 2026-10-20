@@ -14,6 +14,5 @@ services:
         value: "22"
       - key: SITE_URL # the live URL, e.g. https://sanbiome.onrender.com or your custom domain
         sync: false
-        sync: false
       - key: ANALYTICS_DOMAIN # optional Plausible domain
         sync: false
